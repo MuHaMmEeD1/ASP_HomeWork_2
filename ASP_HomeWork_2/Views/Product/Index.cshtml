@@ -1,0 +1,30 @@
+﻿
+@model ProductsViewModel;
+
+
+<section>
+    <a style="padding: 10px; color: black; border: 2px solid black; border-radius: 5px; " href="Product/Add">Add New Product</a>
+
+    <ul style="padding-top: 30px;
+               display: flex;
+               gap: 70px;
+               flex-wrap: wrap;
+               width: 80vw;
+               list-style: none;
+" >
+
+        @foreach(var item in Model.Products)
+        {
+            <li>
+                <p>@item.Id</p>
+                <p>@item.Name</p>
+                <p>@item.Price</p>
+                <div style="display: flex; gap: 20px">
+                <a style="padding: 10px; color: black; border: 2px solid black; border-radius: 5px" asp-controller="Product" asp-action="Delete" asp-route-id="@item.Id" >Delete</a>
+                    <a style="padding: 10px; color: black; border: 2px solid black; border-radius: 5px" asp-controller="Product" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    
+                </div>
+            </li>
+        }
+    </ul>
+</section>

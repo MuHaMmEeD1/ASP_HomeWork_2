@@ -1,0 +1,24 @@
+﻿@model ProductViewModel
+
+
+<section>
+
+    <form asp-controller="Product", asp-action="Edit" asp-route-id="@Model.Product.Id">
+
+        <section>
+            <label asp-for="Product.Name"></label>
+            <input asp-for="Product.Name"/>
+            <span style="color: darkred" asp-validation-for="Product.Name"></span>
+        </section>
+                <section>
+            <label asp-for="Product.Price"></label>
+            <input asp-for="Product.Price"/>
+            <span style="color: darkred" asp-validation-for="Product.Price"></span>
+        </section>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+
+</section>
